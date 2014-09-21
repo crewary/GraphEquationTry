@@ -28,34 +28,124 @@ public class NewJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        ViewTextBox = new javax.swing.JTextArea();
+        oneButton = new javax.swing.JButton();
+        twoButton = new javax.swing.JButton();
+        threeButton = new javax.swing.JButton();
+        fourButton = new javax.swing.JButton();
+        fiveButton = new javax.swing.JButton();
+        sixButton = new javax.swing.JButton();
+        sevenButton = new javax.swing.JButton();
+        eightBbutton = new javax.swing.JButton();
+        nineButton = new javax.swing.JButton();
+        zeroButton = new javax.swing.JButton();
+        textBoxView = new javax.swing.JScrollPane();
+        textView = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        ViewTextBox.setColumns(20);
-        ViewTextBox.setRows(5);
-        jScrollPane1.setViewportView(ViewTextBox);
+        oneButton.setText("1");
+        oneButton.setActionCommand("oneButton");
+        oneButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                oneButtonActionPerformed(evt);
+            }
+        });
+
+        twoButton.setText("2");
+        twoButton.setActionCommand("twoButton");
+
+        threeButton.setText("3");
+        threeButton.setActionCommand("threeButton");
+
+        fourButton.setText("4");
+        fourButton.setActionCommand(" fourButton");
+
+        fiveButton.setText("5");
+        fiveButton.setActionCommand("fiveButton");
+
+        sixButton.setText("6");
+        sixButton.setToolTipText("");
+        sixButton.setActionCommand("sixButton");
+
+        sevenButton.setText("7");
+        sevenButton.setActionCommand("sevenButton");
+
+        eightBbutton.setText("8");
+        eightBbutton.setActionCommand("eightButton");
+
+        nineButton.setText("9");
+        nineButton.setActionCommand("nineButton");
+
+        zeroButton.setText("0");
+        zeroButton.setActionCommand("zeroButton");
+
+        textBoxView.setViewportView(textView);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(zeroButton)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(sevenButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(eightBbutton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(nineButton))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(fourButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(fiveButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(sixButton))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(oneButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(twoButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(threeButton))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(textBoxView, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(256, Short.MAX_VALUE))
+                .addComponent(textBoxView, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(sevenButton)
+                    .addComponent(eightBbutton)
+                    .addComponent(nineButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(fourButton)
+                    .addComponent(fiveButton)
+                    .addComponent(sixButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(twoButton)
+                    .addComponent(oneButton)
+                    .addComponent(threeButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(zeroButton)
+                .addGap(31, 31, 31))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void oneButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oneButtonActionPerformed
+        // TODO add your handling code here:
+        textView.setText("1");
+    }//GEN-LAST:event_oneButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -93,7 +183,17 @@ public class NewJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea ViewTextBox;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton eightBbutton;
+    private javax.swing.JButton fiveButton;
+    private javax.swing.JButton fourButton;
+    private javax.swing.JButton nineButton;
+    private javax.swing.JButton oneButton;
+    private javax.swing.JButton sevenButton;
+    private javax.swing.JButton sixButton;
+    private javax.swing.JScrollPane textBoxView;
+    private javax.swing.JTextPane textView;
+    private javax.swing.JButton threeButton;
+    private javax.swing.JButton twoButton;
+    private javax.swing.JButton zeroButton;
     // End of variables declaration//GEN-END:variables
 }
