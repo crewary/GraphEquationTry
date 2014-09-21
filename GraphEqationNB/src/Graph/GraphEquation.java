@@ -17,7 +17,7 @@ import java.awt.*;
 public class GraphEquation
 {
    //class variable(s)... Window Settings of graph and Table
-   private static double densityX = .001;          //As densityX approaches 0, the plot becomes much smoother
+   private static double densityX = .1;          //As densityX approaches 0, the plot becomes much smoother
    private static double leftX = -5;               //left bound
    private static double rightX = 5;               //right bound
    private static double upY = 5;                  //upper bound
@@ -29,6 +29,7 @@ public class GraphEquation
    private static double tableDifference = .5;      //Interval for table of value return
    private static int wholeScale = 72; //<<<<<<<<<~~~~~~~~~Change to change size of window, eg 36,72,91~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    
+   public static String equation;
    
    public static void main(String[] args)
    {
@@ -62,7 +63,8 @@ public class GraphEquation
       drawAxis(g);
       labelAxis(g);
       drawTableOfPoints(g, A, B, C);
-   	g.drawString("y="+A+"x^2+"+B+"x+"+C,0,10);   //write Eq on graph  
+      
+      g.drawString("y="+A+"x^2+"+B+"x+"+C,0,10);   //write Eq on graph  
       
    }//end main method
    
@@ -70,6 +72,11 @@ public class GraphEquation
    public static double findYValue(double inNumber, double A, double B, double C)
    {
       return ((wholeScale*(A*Math.pow(inNumber,2)+B*inNumber+C)));
+   }
+   
+   public static void setEquationString(String eq)
+   {
+       equation=eq;
    }
    
    public static void drawTableOfPoints(Graphics g, double A, double B, double C)
@@ -134,12 +141,3 @@ public class GraphEquation
    }//end plotGraph
       
 }//end class
-
-/*
-stuff to do:
-Use array to make it graph any equation
-Allow you to pick window size- I scale it for you
-
-*/
-
-
