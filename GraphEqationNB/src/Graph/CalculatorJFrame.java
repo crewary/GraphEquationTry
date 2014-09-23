@@ -39,7 +39,7 @@ public class CalculatorJFrame extends javax.swing.JFrame {
         fiveButton = new javax.swing.JButton();
         sixButton = new javax.swing.JButton();
         sevenButton = new javax.swing.JButton();
-        eightBbutton = new javax.swing.JButton();
+        eightButton = new javax.swing.JButton();
         nineButton = new javax.swing.JButton();
         zeroButton = new javax.swing.JButton();
         textBoxView = new javax.swing.JScrollPane();
@@ -53,6 +53,7 @@ public class CalculatorJFrame extends javax.swing.JFrame {
         graphButton = new javax.swing.JButton();
         xButton = new javax.swing.JButton();
         clearButton = new javax.swing.JButton();
+        backButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -113,11 +114,11 @@ public class CalculatorJFrame extends javax.swing.JFrame {
             }
         });
 
-        eightBbutton.setText("8");
-        eightBbutton.setActionCommand("eightButton");
-        eightBbutton.addActionListener(new java.awt.event.ActionListener() {
+        eightButton.setText("8");
+        eightButton.setActionCommand("eightButton");
+        eightButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eightBbuttonActionPerformed(evt);
+                eightButtonActionPerformed(evt);
             }
         });
 
@@ -205,6 +206,13 @@ public class CalculatorJFrame extends javax.swing.JFrame {
             }
         });
 
+        backButton.setText("Back");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -237,7 +245,7 @@ public class CalculatorJFrame extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(sevenButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(eightBbutton)
+                                .addComponent(eightButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(nineButton)))
                         .addGap(18, 18, 18)
@@ -254,24 +262,27 @@ public class CalculatorJFrame extends javax.swing.JFrame {
                                     .addComponent(plusButton))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(powerButton)
-                                    .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(powerButton)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(backButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(clearButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(textBoxView, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(textBoxView, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                .addComponent(textBoxView, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(sevenButton)
-                            .addComponent(eightBbutton)
+                            .addComponent(eightButton)
                             .addComponent(nineButton))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -291,7 +302,8 @@ public class CalculatorJFrame extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(plusButton)
-                            .addComponent(powerButton))
+                            .addComponent(powerButton)
+                            .addComponent(backButton))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(minusButton)
@@ -316,87 +328,73 @@ public class CalculatorJFrame extends javax.swing.JFrame {
     }
     
     private void oneButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oneButtonActionPerformed
-        equation+="1";
-        updateView();
+        addToEquation("1");
     }//GEN-LAST:event_oneButtonActionPerformed
 
     private void zeroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zeroButtonActionPerformed
-        equation+="0";
-        updateView();
+        addToEquation("0");
     }//GEN-LAST:event_zeroButtonActionPerformed
 
     private void twoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_twoButtonActionPerformed
-        equation+="2";
-        updateView();
+        addToEquation("2");
     }//GEN-LAST:event_twoButtonActionPerformed
 
     private void threeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_threeButtonActionPerformed
-        equation+="3";
-        updateView();
+        addToEquation("3");
     }//GEN-LAST:event_threeButtonActionPerformed
 
     private void fourButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fourButtonActionPerformed
-        equation+="4";
-        updateView();
+        addToEquation("4");
     }//GEN-LAST:event_fourButtonActionPerformed
 
     private void fiveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fiveButtonActionPerformed
-        equation+="5";
-        updateView();
+        addToEquation("5");
     }//GEN-LAST:event_fiveButtonActionPerformed
 
     private void sixButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sixButtonActionPerformed
-        equation+="6";
-        updateView();
+        addToEquation("6");
     }//GEN-LAST:event_sixButtonActionPerformed
 
     private void sevenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sevenButtonActionPerformed
-        equation+="7";
-        updateView();
+        addToEquation("7");
     }//GEN-LAST:event_sevenButtonActionPerformed
 
-    private void eightBbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightBbuttonActionPerformed
-        equation+="8";
-        updateView();
-    }//GEN-LAST:event_eightBbuttonActionPerformed
+    private void eightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightButtonActionPerformed
+        addToEquation("8");
+    }//GEN-LAST:event_eightButtonActionPerformed
 
     private void nineButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nineButtonActionPerformed
-        equation+="9";
-        updateView();
+        addToEquation("9");
     }//GEN-LAST:event_nineButtonActionPerformed
 
     private void decimalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decimalButtonActionPerformed
-        equation+=".";
-        updateView();
+        addToEquation(".");
     }//GEN-LAST:event_decimalButtonActionPerformed
 
     private void plusButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusButtonActionPerformed
-        equation+=" + ";
-        updateView();
+        addToEquation("+");
     }//GEN-LAST:event_plusButtonActionPerformed
 
     private void minusButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minusButtonActionPerformed
-        equation+=" - ";
-        updateView();
+        addToEquation("-");
     }//GEN-LAST:event_minusButtonActionPerformed
 
     private void timesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timesButtonActionPerformed
-        equation+="*";
-        updateView();
+        addToEquation("*");
     }//GEN-LAST:event_timesButtonActionPerformed
 
     private void divideButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divideButtonActionPerformed
-        equation+="/";
-        updateView();
+        addToEquation("/");
     }//GEN-LAST:event_divideButtonActionPerformed
 
     private void powerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_powerButtonActionPerformed
-        equation+="^";
-        updateView();
+        addToEquation("^");
     }//GEN-LAST:event_powerButtonActionPerformed
 
     private void graphButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graphButtonActionPerformed
-        setVisible(false);
+        checkIfTypedEquation();
+        GraphEquation.setVisibleJFrame(false);
+        setVisible(GraphEquation.isVisible);
         dispose();
     }//GEN-LAST:event_graphButtonActionPerformed
 
@@ -405,17 +403,39 @@ public class CalculatorJFrame extends javax.swing.JFrame {
         char charAtThis = equation.charAt(equation.length()-1);
         if(Character.isDigit(charAtThis))
         {
-            equation+="*";
+            addToEquation("*");
         }
-        equation+="x";
-        updateView();
+        addToEquation("x");
     }//GEN-LAST:event_xButtonActionPerformed
 
     private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
-        equation="";
-        updateView();
+        setEquation("");
     }//GEN-LAST:event_clearButtonActionPerformed
 
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        checkIfTypedEquation();
+        setEquation(equation.substring(0,equation.length()-1));
+    }//GEN-LAST:event_backButtonActionPerformed
+
+    //checks 
+    public void checkIfTypedEquation(){
+        if(!equation.equals(textView.getText())){
+            equation=textView.getText();
+        }
+        updateView();   //for testing, read in console
+    }
+    
+    public void addToEquation(String s){
+        checkIfTypedEquation();
+        equation+=s;
+        updateView();
+    }
+    
+    public void setEquation(String s){
+        equation=s;
+        updateView();
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -457,10 +477,11 @@ public class CalculatorJFrame extends javax.swing.JFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backButton;
     private javax.swing.JButton clearButton;
     private javax.swing.JButton decimalButton;
     private javax.swing.JButton divideButton;
-    private javax.swing.JButton eightBbutton;
+    private javax.swing.JButton eightButton;
     private javax.swing.JButton fiveButton;
     private javax.swing.JButton fourButton;
     private javax.swing.JButton graphButton;

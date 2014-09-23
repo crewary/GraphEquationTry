@@ -14,15 +14,29 @@ package Graph;
 import java.util.Scanner;
 import java.awt.*;
 
+
 public class GraphEquation
 {
+    public static boolean isVisible = true;
+    
     public static void main(String[] args) throws InterruptedException
     {
         
         System.out.println("start");
         CalculatorJFrame newFrame = new CalculatorJFrame();
-        newFrame.setVisible(true);
-        Thread.sleep(10000);
-        System.out.println("\n here: "+newFrame.getEquation());
+        newFrame.setVisible(isVisible);
+        
+        while(isVisible){
+            Thread.sleep(100);      //waits till graphButton is clicked.. cause the other way i know how is hard
+        }
+        
+        
+        System.out.println("\n here: " + newFrame.getEquation());
+        
+        
+    }
+    
+    public static void setVisibleJFrame(boolean b){
+        isVisible=b;
     }
 }//end class
